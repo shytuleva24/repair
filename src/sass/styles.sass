@@ -1,0 +1,767 @@
+$mainColorSite: #131313
+$colorAccent: #E3B873
+$mainColorText: #363636
+$colorText: #959595
+$colorWhite: #fff
+
+=media ($size)
+    @media screen and (min-width: #{$size}px)
+        @content
+*, *:before, *:after 
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+.overflowX-hidden
+    overflow-x: hidden
+html
+    font-size: 0.75px
+    +media(565)
+        font-size: 1px
+body 
+    font-family: 'Nunito Sans', sans-serif, Arial
+    font-size: 14rem
+    line-height: 19rem
+a 
+    display: inline-block
+    text-decoration: none
+    &:hover
+        color: $colorAccent
+ul
+    list-style: none
+img
+    width: 100%
+    vertical-align: bottom
+.container 
+    margin: 0 auto
+    padding: 50rem 0
+    max-width: 90%
+    +media(1460)
+        max-width: 1170rem
+.selection
+    color: $colorAccent
+.btn    
+    padding: 12rem 34rem
+    border: 1px solid $colorAccent
+    border-radius: 2px
+    font-size: 11rem
+    text-transform: uppercase
+    font-style: italic
+    transition: all .5s ease
+    cursor: pointer
+    background-color: transparent
+    color: $colorAccent
+    &:hover
+        color: white
+        background-color: $colorAccent
+        box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2)
+.title 
+    font-family: Yeseva One
+    text-transform: uppercase
+.header,
+.footer
+    background-color: $mainColorSite
+    .container
+        padding: 20rem 0
+        display: flex
+        align-items: center
+        justify-content: space-between
+        font-size: 11rem
+        text-transform: uppercase
+    .logo,
+    .link-phone
+        transition: all .5s ease
+        color: $colorAccent
+    .connection
+        display: flex
+        align-items: center
+        gap: 45rem   
+    .connection__phone
+        text-decoration: underline
+    .connection__btn
+        display: none
+        +media(460)
+            display: block
+    .navbar
+        display: none
+        +media(1060)
+            display: block
+    .navbar__menu
+        display: flex
+        gap: 50rem
+    .navbar__link
+        color: #fff
+        transition: all .5s ease
+        &:hover
+            color: $colorAccent
+.home
+    display: flex
+    align-items: center  
+    background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('../img/home.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+    color: #fff
+.home__container
+    width: 100%
+.home__content 
+    max-width: 520rem
+    +media(768)
+        margin-left: 40rem
+.home__title
+    font-size: 23rem
+    line-height: 31rem
+    +media(500)
+        font-size: 40rem
+        line-height: 53rem
+.home__text
+    padding: 20rem 0 40rem 
+    +media(500)
+        font-size: 22rem
+        line-height: 36rem
+.home__connection
+    display: flex
+    gap: 20rem
+    flex-direction: column
+    +media(565)
+        flex-direction: row
+.home__btn
+    padding: 18rem 42rem
+    color: #fff
+    border-color: #fff
+    &:hover
+        border-color: $colorAccent
+.projects
+    background-color: $mainColorSite
+.projects__container
+    +media(875)
+        padding-bottom: 400rem
+.projects__nav
+    display: none
+    margin-bottom: 50rem
+    +media(875)
+        display: flex
+        justify-content: end
+        align-items: center
+        white-space: nowrap
+        column-gap: 60rem
+.projects__item
+    color: rgba(255, 255, 255, 0.3)
+    transition: all .5s ease
+    cursor: pointer
+.projects__item.activeSlide 
+    color: $colorAccent
+    text-decoration: underline
+.projects__content
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    column-gap: 50rem
+    +media(875)
+        flex-direction: row
+.projects__detail
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    +media(875)
+        max-width: 445rem
+.projects-title
+    margin-bottom: 35rem
+    font-size: 27rem
+    color: $colorAccent   
+.projects-text
+    color: #fff
+    line-height: 27rem
+.projects-title,
+.projects-text
+    display: none
+    +media(875)
+        display: block
+.projects-title__mobile,
+.projects-text__mobile
+    display: block
+    text-align: center
+    +media(875)
+        display: none
+.projects-text__mobile
+    margin-bottom: 68rem
+.projects-description
+    display: flex
+    flex-wrap: wrap
+    gap: 40rem
+    +media(875)
+        margin-bottom: 80rem
+.projects-description__item
+    width: 44%
+.projects-description__title
+    font-size: 18rem
+    margin-bottom: 10rem
+.projects-description__text
+    color: #fff
+.projects-arrows
+    display: flex
+    align-items: center
+    gap: 30rem
+    order: -1
+    margin-bottom: 40rem
+    justify-content: center
+    +media(875)
+        justify-content: start
+        order: 0
+        margin-bottom: 0
+.projects-arrow
+    max-width: 40rem
+    cursor: pointer
+.projects-arrow__right
+    transform: rotateY(180deg)
+.projects-dots
+    display: flex
+    gap: 20rem
+    .projects-dots__item
+        width: 10rem
+        height: 10rem
+        background-color: white
+        border-radius: 50%
+        opacity: .3
+        cursor: pointer
+        transition: all .5s ease
+    .projects-dots__item.activeSlide
+        opacity: 1
+.projects-photos
+    position: relative
+    width: 100%
+    margin-bottom: 40rem
+    order: -1
+    min-height: 340rem
+    +media(875)
+        order: 0
+        margin-bottom: 0
+        width: 50%
+    .slides
+        position: absolute
+        object-fit: cover
+        object-position: center
+        opacity: 0
+        transition: opacity .3s ease-in-out
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+.slides.activeSlide
+    transition: opacity .3s ease-in-out
+    opacity: 1
+.control
+    background-color: $mainColorSite
+    +media(875)
+        background-color: transparent
+        margin-top: -360rem
+    // background: linear-gradient(180deg, rgba(19,19,19,1) 0%, rgba(19,19,19,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%)
+.control__title
+    font-size: 20rem
+    color: #fff
+    text-align: center
+.icon
+    width: 110rem
+    margin: 13rem auto 31rem
+.control-video
+    position: relative
+    margin: 0 auto
+    display: flex
+    width: 100%
+    align-items: center
+    +media(875)
+        width: 70%
+        max-width: 817rem
+    img
+        filter: brightness(40%) drop-shadow(0px 20px 50px rgba(0, 0, 0, 0.15))
+.control-video__play
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 85rem
+    height: 85rem
+    transform: translate(-50%, -50%)
+    border: 1px white solid
+    border-radius: 50%
+    transition: all .5s ease
+    z-index: 100
+    cursor: pointer
+    &:hover
+        border: 1px $colorAccent solid
+        background-color: $colorAccent
+    &::after
+        content: ""
+        width: 0
+        height: 0
+        position: absolute
+        top: 50%
+        left: 54%
+        transform: translate(-50%, -50%)
+        border-top: 15rem solid transparent
+        border-left: 25rem solid white
+        border-bottom: 15rem solid transparent
+        z-index: 101
+.dividing-line
+    margin: 62rem auto 32rem
+    width: 55rem
+    background-color: $colorAccent
+    border: none
+    height: 1.5rem
+.control-text
+    margin: 0 auto 90rem
+    max-width: 680rem   
+    text-align: center
+    font-size: 11rem
+    line-height: 169.8%
+    color: #fff
+    +media(875)
+        font-size: 18rem
+        line-height: 37rem
+        color: $mainColorText
+.control-form
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+input:focus-visible,
+textarea:focus-visible 
+    border: none
+    border-bottom: 1px solid $colorAccent
+a:active, 
+a:focus 
+    outline: none
+input, 
+textarea 
+    outline: none
+input:active, textarea:active 
+    outline: none
+:focus 
+    outline: none
+.control-form__main
+    width: 100%
+    margin-bottom: 40rem
+    display: flex
+    flex-direction: column
+    justify-content: center
+    gap: 60rem
+    color: $mainColorSite
+    +media(875)
+        max-width: 770rem
+        flex-direction: row
+.form-label
+    font-size: 13rem
+    line-height: 21rem
+.control-form__label
+    color: rgba(255, 255, 255, 0.5)
+    +media(875)
+        color: rgba(54, 54, 54, 0.5)
+.form-input
+    width: 100%
+    border: none
+    border-bottom: 1px solid #9a9a9a
+    padding: 2rem 0 6rem 0
+    background: transparent
+    &::placeholder
+        color: #fff
+.control-form__input
+        +media(875)
+            color: $mainColorText
+.checkbox-container
+    padding-left: 26rem
+    position: relative
+.checkbox-input
+    appearance: none
+    position: absolute
+    &:checked + .checkbox-label::before
+        background-color: $colorAccent
+        border: 1px solid #E3B873
+    &:checked + .checkbox-label::after
+        content: "\2714"
+        color: #fff
+        text-align: center
+        vertical-align: middle   
+.checkbox-label
+    color: #fff
+    +media(875)
+        color: #181818
+    &::before
+        content: ""
+        display: block
+        width: 18rem
+        height: 18rem
+        border: 1px solid #9a9a9a
+        position: absolute
+        border-radius: 2rem
+        top: 0
+        left: 0
+    &::after
+        content: ""
+        display: block
+        width: 18rem
+        height: 18rem
+        position: absolute
+        top: 0
+        left: 0
+.control-form__button
+    padding: 18rem 78rem
+    background-color: $colorAccent
+    color: #fff
+    +media(875)
+        background-color: transparent
+        color: $colorAccent
+.types-repair__title
+    text-align: center
+    font-size: 20rem
+    line-height: 28rem
+    color: #181818
+.types-repair__cards
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    column-gap: 30rem
+    +media(965)
+        flex-wrap: nowrap
+.repair-item
+    position: relative
+    width: 100%
+    +media(480)
+        width: 47%
+.repair-item__content
+    width: 90%
+    position: relative
+    transform: translateY(-25%)
+    +media(480)
+        width: 85%
+        left: 50%
+        transform: translate(-50%, -25%)
+.repair-item__title
+    padding: 25rem 35rem 13rem
+    background-color: #fff
+    font-size: 18rem
+    line-height: 25rem
+    color: $mainColorText
+    text-transform: none
+.repair-item__text 
+    padding: 0 35rem 35rem 50rem
+    position: relative
+    font-size: 10rem
+    background-color: #fff
+    color: $colorText
+    list-style: disc
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03)
+    &::before
+        content: ""
+        position: absolute
+        width: 100%
+        height: 5rem
+        background-color: #fff
+        top: -2rem
+        left: 0
+        z-index: 0
+    +media(716)
+        line-height: 27rem
+        font-size: 13rem
+
+.repair-item__btn
+    position: relative
+    transform: translateY(-50%)
+    background-color: $colorAccent
+    color: #fff
+    &:hover
+        background-color: #fff
+        color: $colorAccent
+.measurement
+    display: none
+    +media(835)
+        display: block
+        background-image: url("../img/measurement/measurement.jpg")
+        background-repeat: no-repeat
+        background-size: contain
+.measurement__container
+    display: flex
+    column-gap: 200rem
+.measurement-content__item
+    display: flex
+    align-items: center
+    column-gap: 26rem
+.measurement-content__number
+    color: #fff
+    padding: 13rem
+    background-color: $colorAccent
+    border: 8rem solid #fff
+    border-radius: 50%
+    font-size: 18rem
+    text-align: center
+    box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2)
+.measurement-content 
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+.measurement-form
+    padding: 30rem 50rem
+    background-color: $mainColorSite
+    box-shadow: 0px 30px 30px rgb(0 0 0 / 5%)
+    .measurement-form__title
+        margin-bottom: 30rem
+        font-size: 18rem
+        line-height: 26rem
+        text-align: center
+        color: #fff
+    .measurement-form__label
+        color: rgba(255, 255, 255, 0.5)
+    .button-container
+        text-align: right
+    .checkbox-container
+        margin-bottom: 20rem
+    .checkbox-label
+        color: #fff
+    .measurement-form__button
+        padding: 18rem 41rem
+    //     background-color: $colorAccent
+    //     color: #fff
+    //     &:hover
+    //         background-color: transparent
+    //         color: $colorAccent
+.measurement-form__content
+    .measurement-form__input
+        margin-bottom: 40rem
+        color: #fff
+        &::placeholder
+            color: #fff
+        &:last-child
+            margin-bottom: 25rem
+.sale__container
+    padding: 0
+    display: none
+    +media(835)
+        display: block
+    +media(1060)
+        padding-bottom: 200rem
+.sale__content
+    display: flex
+    align-items: center
+    justify-content: end
+    gap: 25rem
+    color: $colorAccent
+    transform: translateX(-150rem)
+.sale__icon 
+    padding: 15rem
+    width: 72rem
+    height: 72rem
+    display: flex
+    justify-content: center
+    align-items: center
+    background: #E3B873
+    box-shadow: 0px 10px 20px rgb(237 192 120 / 20%)
+    border-radius: 50%
+.sale__text
+    max-width: 220rem
+.repair-styles
+    display: none
+    +media(1060)
+        display: block
+.repair-styles__bg
+    height: 864rem
+    background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('../img/styles-repair/styles-repairBG.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+.repair-styles__container
+    padding: 0
+    display: flex
+    gap: 10rem
+    justify-content: space-between
+.repair-styles__content 
+    padding: 100rem 0
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+.repair-styles__title
+    margin-bottom: 15rem
+    font-size: 27rem
+    line-height: 37rem
+    color: $colorAccent
+.repair-styles__link
+    font-size: 20rem
+    line-height: 38rem
+    color: #fff
+    &:hover
+        text-decoration: underline
+        color: $colorAccent
+.styles-photos 
+    width: 750rem
+    display: flex
+    gap: 40rem
+.styles-photos__group
+    width: 354rem
+    display: flex
+    flex-direction: column
+    &:last-child
+        img
+            &:first-child
+                margin-top: -113rem
+    img
+        &:first-child
+            margin: -40rem 0 40rem
+.clients
+    // display: none
+    background-image: url("../img/our-clients/Frame-1.jpg")
+    background-size: cover
+    +media(860)
+        display: block
+    // .container   
+    //     padding: 0
+    //     +media(860)
+    //         padding: 50rem 0
+.clients__container
+    padding: 0
+    padding-bottom: 350rem
+    // padding: 100rem 0 350rem
+    +media(860)
+        padding-top: 100rem
+    +media(560)
+        padding-top: 50rem
+.clients__header
+    margin-bottom: 40rem
+.clients__title
+    text-align: center
+.clients__text
+    font-size: 18rem
+    line-height: 29rem
+    text-align: center
+    color: $mainColorText
+.clients__content
+    display: flex
+    gap: 50rem
+    flex-wrap: wrap
+    justify-content: center
+    +media(1060)
+        flex-wrap: nowrap
+.clients-item
+    width: 80%
+    padding: 20rem
+    position: relative
+    background: $colorWhite
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.14)
+    transition: all .5s ease-in-out
+    &:hover
+        transform: scale(1.02)
+    +media(860)
+        width: 45%
+
+.clients-item__header 
+    margin-bottom: 20rem
+    display: flex
+    align-items: center
+    gap: 20rem
+.clients-item__photo
+    border-radius: 50%
+    width: 76rem
+.clients-item__name
+    padding-right: 30rem
+    font-size: 18rem
+    line-height: 23rem
+    font-weight: normal
+    text-transform: capitalize
+.clients-item__content
+    padding-bottom: 30rem
+.clients-item__text
+    font-size: 13rem
+    line-height: 180%
+    color: $colorText
+.clients-item__button
+    display: flex
+    position: absolute
+    left: 0
+    top: 100%
+    transform: translateY(-50%)
+.clients-item__footage,
+.clients-item__terms
+    padding: 15rem 17rem 15rem 55rem
+    // padding-left: 50rem
+    position: relative
+    color: $colorWhite
+    line-height: 22rem
+    font-size: 17rem
+    background-color: $colorAccent
+    box-shadow: 5px 5px 20px rgba(227, 184, 115, 0.5)
+    &::before
+        content: ""
+        position: absolute
+        top: 50%
+        left: 10rem
+        transform: translateY(-50%)
+        width: 33rem
+        height: 32rem
+        background: url(../img/our-clients/client1.svg)
+.clients-item__terms
+    border-left: 1px solid #fff
+    &::before
+        background: url(../img/our-clients/client2.svg)
+.questions-form
+    position: relative
+.questions-form__container
+    padding: 50rem
+    position: absolute
+    left: 50%
+    width: 830rem
+    transform: translate(-50%, -50%)
+    background-color: $mainColorSite
+    color: #fff
+    .checkbox-label
+        color: #fff
+    .checkbox-container
+        margin-bottom: 50rem
+.animated-element
+    opacity: 0
+    transform: scale(0.8)
+    transition: all .6s ease-in-out
+.questions-form__title
+    padding-bottom: 45rem
+    text-align: center
+    font-size: 20rem
+.questions-form__contact
+    max-width: 520rem
+    margin: 0 auto   
+    display: flex
+    flex-direction: column
+    align-items: center  
+.questions-form__row
+    width: 100%
+    display: flex
+    flex-direction: column
+    gap: 55rem
+    margin-bottom: 48rem
+    +media(460)
+        flex-direction: row
+.form-label
+    width: 100%
+.form-input
+    // margin-bottom: 40rem
+    color: #fff
+    &::placeholder
+        color: #fff
+    // &:last-child
+        // margin-bottom: 25rem
+.questions-form__label
+        color: rgba(255, 255, 255, 0.5)
+.contacts
+    padding-top: 260rem
+    background: linear-gradient(180deg, rgba(24, 24, 24, 0.9) 3.47%, rgba(24, 24, 24, 0.72) 100%), url(../img/contacts/contact.jpg)
+    background-size: cover
+    text-align: center
+.contact-title
+    max-width: 590rem
+    margin: 0 auto 26rem
+    font-size: 20rem
+    line-height: 28rem
+.contacts-social
+    margin-bottom: 43rem
+    display: flex
+    gap: 15rem
+    justify-content: center
+    a
+        transition: all .5s ease-in-out
+        &:hover
+            transform: scale(1.2) rotate(360deg)
+.contact-map 
+    max-width: 925rem
+    margin: 0 auto
