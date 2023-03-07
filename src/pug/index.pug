@@ -18,22 +18,22 @@ html(lang="en")
                     nav.navbar 
                         ul.navbar__menu 
                             li.navbar__item
-                                a.navbar__link(href="#home") Home
+                                a.navbar__link.flowing-scroll(href="#home") Home
                             li.navbar__item 
-                                a.navbar__link(href="#projects") Projects
+                                a.navbar__link.flowing-scroll(href="#projects") Projects
                             li.navbar__item
-                                a.navbar__link(href="#measurement") Measurement
+                                a.navbar__link.flowing-scroll(href="#measurement") Measurement
                             li.navbar__item
-                                a.navbar__link(href="#team") Team
+                                a.navbar__link.flowing-scroll(href="#team") Team
                             li.navbar__item
-                                a.navbar__link(href="#reviews") Reviews
+                                a.navbar__link.flowing-scroll(href="#reviews") Reviews
                             li.navbar__item
-                                a.navbar__link(href="#contacts") Contacts
+                                a.navbar__link.flowing-scroll(href="#contacts") Contacts
                     .connection
                         a.connection__phone.link-phone(href="tel:+380999999999") +38 (099) 999-99-99
-                        button.connection__btn.btn Request a call
+                        button.connection__btn.btn.flowing-scroll(href='#questionsForm') Request a call
             main 
-                section.home(id="home")
+                section.home#home
                     .home__container.container
                         .home__content 
                             h1.home__title.title Turnkey Repair in the city of 
@@ -42,8 +42,8 @@ html(lang="en")
                             .home__connection 
                                 button.home__btn.btn calculate the cost
                                 button.home__btn.btn submit your application
-                section.projects(id="projects")
-                    .projects__container.container
+                section.projects
+                    .projects__container.container#projects
                         ul.projects__nav.animated-element
                             li.projects__item.title.activeSlide Kiev, Admiral
                             li.projects__item.title Kharkiv Thieves
@@ -101,7 +101,7 @@ html(lang="en")
                                 input.checkbox-input(type="checkbox" name="controlCheckbox" id="controlCheckbox")
                                 label.control-form__label.form-label.checkbox-label(for="controlCheckbox") I agree to the processing of personal data
                 section.types-repair
-                    .types-repair__container.container.animated-element 
+                    .types-repair__container.container.animated-element#measurement
                         .types-repair__header 
                             h3.types-repair__title.title.animated-element Types of repair
                             .types-repair__icon.icon.animated-element
@@ -150,7 +150,7 @@ html(lang="en")
                                             li Replacing sockets and switches
                                             li Replacing doors
                                         button.repair-item__btn.btn from 4000 uah / m2
-                section.measurement
+                section.measurement#team
                     .measurement__container.container
                         .measurement-content 
                             .measurement-content__item.animated-element 
@@ -207,7 +207,7 @@ html(lang="en")
                                 .styles-photos__group
                                     img.animated-element(src="img/styles-repair/photo3.jpg", alt="repair styles IC Repair Design Project")
                                     img.animated-element(src="img/styles-repair/photo4.jpg", alt="repair styles IC Repair Design Project")
-                section.clients
+                section.clients#reviews
                     .clients__container.container
                         .clients__header 
                             h3.clients__title.title.animated-element our clients
@@ -246,7 +246,7 @@ html(lang="en")
                                     .clients-item__footage.title 56 m2
                                     .clients-item__terms.title 86 DAYS
                 section.questions-form
-                    form.questions-form__container.container(action="index.html", method="post") 
+                    form.questions-form__container.container#questionsForm(action="index.html", method="post") 
                         h4.questions-form__title.title have any questions?
                         .questions-form__contact
                             .questions-form__row
@@ -263,7 +263,7 @@ html(lang="en")
                             p.button-container
                                 button.questions-form__button.btn Call the measurer
                 section.contacts
-                    .contacts__container.container.animated-element 
+                    .contacts__container.container.animated-element#contacts
                         h3.title.selection.contact-title Rostov-on-Don, Nansen St., 239 Shopping Center Decorum Tel 
                             a.selection(href="tel:+39287683239") +3 (928) 768-32-39
                         .contacts-social
@@ -280,18 +280,18 @@ html(lang="en")
                         nav.navbar 
                             ul.navbar__menu 
                                 li.navbar__item
-                                    a.navbar__link(href="#home") Home
+                                    a.navbar__link.flowing-scroll(href="#home") Home
                                 li.navbar__item 
-                                    a.navbar__link(href="#projects") Projects
+                                    a.navbar__link.flowing-scroll(href="#projects") Projects
                                 li.navbar__item
-                                    a.navbar__link(href="#measurement") Measurement
+                                    a.navbar__link.flowing-scroll(href="#measurement") Measurement
                                 li.navbar__item
-                                    a.navbar__link(href="#team") Team
+                                    a.navbar__link.flowing-scroll(href="#team") Team
                                 li.navbar__item
-                                    a.navbar__link(href="#reviews") Reviews
+                                    a.navbar__link.flowing-scroll(href="#reviews") Reviews
                                 li.navbar__item
-                                    a.navbar__link(href="#contacts") Contacts
+                                    a.navbar__link.flowing-scroll(href="#contacts") Contacts
                         .connection
                             a.connection__phone.link-phone(href="tel:+380999999999") +38 (099) 999-99-99
-                            button.connection__btn.btn Request a call
+                            button.connection__btn.btn.flowing-scroll(href='#questionsForm') Request a call
     script(src="js/scripts.js") 

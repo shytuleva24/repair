@@ -3,20 +3,36 @@ $(function () {
     $('.home').css('height', window.innerHeight + "px");
     $('.slider').css('height', $('.slider .slides.activeSlide').height() + "px");
     projectSlider();
-    
-    $(window).scroll(function() {
-        $('.animated-element').each(function() {
+
+    $(window).scroll(function () {
+        $('.animated-element').each(function () {
             var elementTop = $(this).offset().top;
             var windowHeight = $(window).height();
             var scrollPosition = $(window).scrollTop();
-            if (scrollPosition > elementTop - windowHeight + 200) {                
+            if (scrollPosition > elementTop - windowHeight + 200) {
                 $(this).css({
-                  'transform': 'scale(1)',
-                  'opacity': 1
+                    'transform': 'scale(1)',
+                    'opacity': 1
                 });
             }
         });
     });
+
+    $('.flowing-scroll').on( 'click', function(){ 
+        let el = $(this);
+        let dest = el.attr('href');
+        if(dest !== undefined && dest !== '') { 
+            $('html').animate({ 
+                scrollTop: $(dest).offset().top - $('header').outerHeight()// прокручиваем страницу к требуемому элементу
+            }, 500 // скорость прокрутки
+            );
+        }
+        return false;
+    });
+
+
+
+
 });
 
 function projectSlider() {
@@ -82,4 +98,3 @@ function projectSlider() {
         prevDot.fadeIn(0).addClass('activeSlide');
     });
 }
-
